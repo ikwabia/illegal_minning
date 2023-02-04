@@ -1,0 +1,76 @@
+//Adding my aoi shapefile and is repeated for all the three regions
+var region = ee.FeatureCollection("users/Ikwabia/landuse");
+Map.addLayer(region);
+Map.centerObject(region,10);
+var S2 = ee.ImageCollection("COPERNICUS/S2_SR");
+var filtered = S2
+       .filterDate('2020-01-01','2020-12-31')//changes the date for respective year
+       .filterBounds(region)
+       .filterMetadata('CLOUDY_PIXEL_PERCENTAGE','Less_than',1)
+       .median();
+       
+//Color combination for natural color
+Map.addLayer(filtered.clip(region),{min:0,max:2000,bands:(['B4','B3','B2'])});
+
+//Determining Vegetation indices
+var NIR = filtered.select('B8');
+var RED = filtered.select('B4');
+var NDVI = NIR.subtract(RED).divide(NIR.add(RED));
+Map.addLayer(NDVI.clip(region));
+
+var Vegetation = NDVI
+Vegetation = ee.Image(1).mask(Vegetation.gte(0.3));
+Map.addLayer(Vegetation.clip(region));
+
+//calculating area of vegetation
+var area_pxa = Vegetation.multiply(ee.Image.pixelArea())
+         .reduceRegion(ee.Reducer.sum(),region,10,null,null,false,1e13)
+         .get('constant');
+         
+         
+area_pxa = ee.Number(area_pxa).divide(1e6);
+print('Area using ee.Image.pixelArea(km2)',area_pxa);
+print('Acres',area_pxa.multiply(247.1054));
+
+
+import pandas as pd
+##importing the csv file generated with the analysis in gcp
+df=pd.read_csv(r"C:/Users/Windows10/Desktop/cloud_computing/cc.csv")
+df
+##describing the data
+df.describe()
+##plotting the graph of the statistics
+import matplotlib.pyplot as plt
+sns.set_style('whitegrid')
+plt.figure(figsize=(12,6))
+date=df['DATE']
+ashanti=df['ASHANTI']
+western=df['WESTERN']
+greater=df['GREATER']
+plt.plot(date,ashanti,label='ASHANTI REGION',linewidth=2,marker='o')
+plt.plot(date,western,label='WESTERN REGION',linewidth=2,marker='*')
+plt.plot(date,greater,label='GREATER ACCRA REGION',linewidth=2,marker='x')
+plt.title('YEARLY VEGETATION FLOW')
+plt.ylabel('ACRES OF LAND')
+plt.xlabel('YEARS')
+plt.legend()
+
+##average acres of Land of vegetation through analysis period
+average_A = df['ASHANTI'].mean()
+average_G = df['GREATER'].mean()
+average_W = df['WESTERN'].mean()
+print(average_A)
+print(average_G)
+print(average_W)
+
+##analysing period 2018&2022
+compare_data= df[(df.DATE ==2018)!=(df.DATE==2022)]
+compare_data
+compare_data.std()
+
+##bargraph of 2018&2022
+compare_data.plot(x='DATE',kind='bar',figsize=(12,6))
+plt.ylabel('ACRES OF LAND')
+plt.xlabel('YEARS')
+plt.title('COMPARING DATA OF 2018 & 2022')
+
