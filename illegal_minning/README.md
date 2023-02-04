@@ -1,10 +1,10 @@
 **USING GOOGLE EARTH ENGINE AND SATELLITE IMAGERY TO ASSESS THE IMPACT OF ILLEGAL MINNING ON VEGETATION COVER.** 
 
-**1.ABSTRACT** 
+**ABSTRACT** 
 
 Mining has been part of Ghana’s history and significant to the growth of Ghana’s economy. Ghana is a major export of gold in Africa and acquired through mining activities but recent public outcry on the devastating impacts of it on Ghana’s vegetation and water bodies. Its activities have been led to significant impact on loss of certain patches of vegetation since it comes with its own risk and benefit. The activities are destructive in as much as is whether practiced legal or illegal. Illegal mining is mostly considered as environmental destructive due to its way of execution. This study assesses the impact of illegal mining on vegetation cover, a case study in Ghana. The study employs the usage of the cloud services of Google earth engine and the code editor to compute the statistics of vegetation cover within a period. Different areas are selected based on legally practiced mining activity, illegally practiced mining activity and without mining activity. Normalized Difference Vegetation Index (NDVI) analysis is done to assess also the changes across the selected areas. It resulted as Ashanti region with increased record of illegal mining had the higher decrease in vegetation cover under the period of study. Comparing it to the western region with legal mining, the decline in vegetation was not high and averagely the same throughout the period of study. 
 
-0. **INTRODUCTION** 
+ **INTRODUCTION** 
 
 Minerals acquired from mining are a component for growth in the economy and infrastructure development. Its output and support to the economy have been beneficial to most African countries which are still developing yet the activities are associated with destruction of vegetation, water pollution and other environmental degradation issues. 
 
@@ -14,11 +14,11 @@ Satellite imagery is one of the sources for land changes analysis and has wide v
 
 way especially for global analysis, Google earth engine as a cloud resource makes this analysis to be effectively made within a shorter time frame. Cloud computing platforms make data accessible through its open source datasets and support data analysis. The GEE as a cloud computing platform is restricted to JavaScript and python in the code editor environment. 
 
-1. **GHANA** 
+ **GHANA** 
 
 Ghana is located in the west of Africa and located at a latitude of 7.9465° N, and longitude of 1.0232° W. It is noted for its natural resources in Africa, having a total land area of 238,533 km² and a population of 32.37 Million. Ghana's climate is tropical and strongly influenced by the West Africa monsoon winds. The climate is generally warm with variable temperatures masked by seasons and elevation. The northern part of the country typically records one rainy season, which begins in May and lasts until September. Ghana’s landscape is dominated by agricultural lands and forest vegetation. 
 
-**2.1.1 LAND COVER DISTRIBUTION OF GHANA** 
+**LAND COVER DISTRIBUTION OF GHANA** 
 
 More than 50% of the landmass of present-day Ghana is mainly used for agricultural purposes. A majority of the remaining land were covered with forest and inland water bodies. Unfortunately, the forests have diminished significantly due to a lot of factors of which illegal mining is not exceptional. Other areas are occupied with structures purposely for residing and commercial activities. 
 
@@ -52,7 +52,7 @@ The aim of this study is to determine the NDVI for the various study areas which
 
 Also the second part of the code uses python to present the data of the impact of illegal.
 
-**4.0 RESULTS AND DISCUSSIONS** 
+**RESULTS AND DISCUSSIONS** 
 
 Ghana has been a hub for production of Gold for the past decade and characterized by mining activities which are legal and illegal activities. These activities are across the whole regions of the country with a lot of the activities in the Ashanti and Western region. In recent years, with dwindling opportunities for employment in the formal sector and the lucrativeness of gold mining, there has been an upsurge of miners, majority of them operating illegally especially in the Ashanti region which has a lot of gold resources in the land. Studies have already noted illegal gold mining as a way of livelihood diversification however; the activities of illegal gold mining is best known for its disastrous effects on the environment especially the green vegetation patches on forest and agricultural lands. Unlike the legal mining which have the requisite licenses and follow the required procedure in its mining operations. The legal mining activities in the process destroy the vegetation cover but always put in the reclamation procedure to restore the land to its vegetation cover originally before mining which sometimes fail to completely reclaim but better than the illegal mining which leaves the land unattended. 
 
@@ -71,7 +71,7 @@ Comparing the Western region which had maintained their vegetation cover steadil
 **Figure 4.bargraph of 2018&2022 showing sharp declines in the Ashanti (illegal mining) and Western (legal mining)** 
 ![](image_3.png)
 
-**5.0 CONCLUSION** 
+**CONCLUSION** 
 
 Based on the preliminary analysis conducted using GEE, we find that this cloud platform is a powerful tool for analyzing a wide variety of data simultaneously, in one consolidated system. However, supporting both spatial and temporal analysis together is not an obvious task for the platform. Starting out with a small study area, I attempted to test the limits of the system. Based on the frequent computational time-outs despite the small study areas, we find it is of key importance to strategically load and aggregate our input data into GEE, especially to conduct continental and global-scale analysis. The main input of this study is to understand the contribution of big-data repositories and cloud computing to handle large amounts of data simultaneously with restricted or less storage space. The analysis conducted using GEE cloud platform managed to provide computations of overlay AOI with the satellite data and produced results. There is the need for the Mineral Commission of Ghana together with the district assemblies and traditional authorities to prepare short- to medium-term training programs to continuous to disseminate the impact of illegal mining activities on the environment and the vegetation cover. The Ministry of Lands and Natural Resources and the Ministries of Food and Agriculture need to engage more with relevant stakeholders including academics, non- governmental organizations, researchers, the Parliament of Ghana, traditional authorities, and youth groups to work at better regulations of the mining activity to avoid illegal mining and protect the environment and the vegetation since its devastating impact is very significant 
 
